@@ -1,6 +1,8 @@
 package step2_01.array;
 
+import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 /*
  * # 중복숫자 금지[1단계]
@@ -34,9 +36,33 @@ public class ArrayEx11_문제 {
 	public static void main(String[] args) {
 	
 		Random ran  = new Random(); 
+		Scanner scan = new Scanner(System.in);
 		
 		boolean[] isFirst = new boolean[5];
 		int[] arr   = new int[5];
+		
+		System.out.println("[ 처음 상태 ] ");
+		System.out.println(Arrays.toString(isFirst));
+		System.out.println(Arrays.toString(arr));
+		
+		
+		int cnt = 0;
+		for ( int i = 0 ; i < 5 ; i++ ) {
+			System.out.print("Random number : ");
+			int num = ran.nextInt(5);
+			System.out.println(num);
+			
+			if ( isFirst[num] == false ) {
+				isFirst[num] = true;
+				arr[cnt] = num;
+				cnt++;
+			}
+			System.out.println(Arrays.toString(isFirst));
+			System.out.println(Arrays.toString(arr));
+		}
+		
+	
+		
 					
 	}
 	
