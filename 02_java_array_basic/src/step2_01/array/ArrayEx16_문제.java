@@ -1,5 +1,10 @@
 package step2_01.array;
 
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
+//2023 0222 2004 ~ 14
 /*
  * # 1 to 50[1단계] : 1 to 4
  * 
@@ -27,8 +32,44 @@ public class ArrayEx16_문제 {
 
 	public static void main(String[] args) {
 		
+		Random ran = new Random();
+		Scanner scan = new Scanner(System.in);
+		
 		int[] arr = new int[4];
 		boolean[] isCheck = new boolean[4];
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = i+1;
+		}
+		
+		//배열 섞기
+		int cnt = 0;
+		while(cnt < 10) {
+			int tmpran = ran.nextInt(4);
+			int tmp = arr[0];
+			arr[0] = arr[tmpran];
+			arr[tmpran] = tmp;
+			cnt++;
+		}
+		
+		System.out.println(Arrays.toString(arr));
+		
+		boolean isRun = true;
+		int num = 1;
+		while(isRun){
+			
+			System.out.print("입력 >> ");
+			int location = scan.nextInt();
+			if ( arr[location] == num ) {
+				arr[location] = 9;
+				num++;
+				System.out.println(Arrays.toString(arr));
+				if ( num == 5 ) isRun = false;
+			}
+			else System.out.println("TRY AGAIN");
+		}
+	
+
 		
 	}
 	

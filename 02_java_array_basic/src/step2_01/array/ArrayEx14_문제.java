@@ -1,5 +1,6 @@
 package step2_01.array;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -22,15 +23,42 @@ public class ArrayEx14_문제 {
 		
 		int[] game = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		int player = 0;
+		boolean isRun = true;
 		
-		for (int i=0; i < game.length; i++) {
-			int move = scan.nextInt();
+		
+		while (isRun) {
+			System.out.println(Arrays.toString(game));
+			System.out.print("1. LEFT 2. RIGHT 3.END >> ");
+			int move = scan.nextInt(); // 왼쪽, 오른쪽 중 어디로 이동할지 정하는 변수 입력 
+			
+			//캐릭터 위치 인덱스 구하기
 			for (int j = 0; j < game.length; j++) {
-				if (game[i] == 2) {
-					player = i;
-					int location = player;
+				if (game[j] == 2) {
+					player = j;
+					break;
 				}
 			}
+			
+			if ( move == 1 ) { // 캐릭터가 왼쪽으로 이동해야하는 경우
+				game[player] = 0;
+				game[--player] = 2;
+				if ( player == 0 ) {
+					System.out.println("가장 앞에 도착");
+					isRun = false;
+				}
+				
+			}
+			else if ( move == 2 ) { // 캐릭터가 오른쪽으로 이동해야하는 경우
+				game[player] = 0;
+				game[++player] = 2;
+				if ( player == 14 ) {
+					System.out.println("가장 뒤에 도착");
+					isRun = false;
+				}
+			}
+			
+			else if ( move == 3 ) isRun = false;
+			
 		}
 				
 	}
