@@ -18,47 +18,41 @@ public class ArrayEx19_연습 {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		int[] arr = new int[5];
+		int[] arr = {10 , 20 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0};
+		int elementCnt = 2;
+		int selectMenu = 0;
 		
-		int num = 0;
-		
-		System.out.println(arr.length);
-		
-//		int[] arr = {10 , 20 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0};
-//		int elementCnt = 2;
-//		int selectMenu = 0;
-//		
-//		while (true) {
-//			
-//			System.out.println(Arrays.toString(arr));
-//			System.out.println();
-//			
-//			System.out.println("[1]추가");
-//			System.out.println("[0]종료");
-//			System.out.print("메뉴 선택 : ");
-//			selectMenu = scan.nextInt();
-//			
-//			if (selectMenu == 1) {
-//				
-//				System.out.print("추가 할 값 입력 : ");
-//				int data = scan.nextInt();
-//				
-//				if (elementCnt == arr.length) {
-//					System.out.println("더이상 추가 할 수 없습니다.");
-//					continue;
-//				}
-//				
-//				arr[elementCnt] = data;
-//				elementCnt++;
-//				
-//			}
-//			else if (selectMenu == 0) {
-//				scan.close();
-//				break;
-//			}
+		while (true) {
 			
-	}
+			System.out.println(Arrays.toString(arr));
+			System.out.println();
+			
+			System.out.println("[1]추가");
+			System.out.println("[0]종료");
+			System.out.print("메뉴 선택 : ");
+			selectMenu = scan.nextInt();
+			
+			if (selectMenu == 1) {
+				
+				System.out.print("추가 할 값 입력 : ");
+				int data = scan.nextInt();
+				
+				if (elementCnt == arr.length) {
+					System.out.println("더이상 추가 할 수 없습니다.");
+					continue;
+				}
+				
+				arr[elementCnt] = data;
+				elementCnt++;
+				
+			}
+			else if (selectMenu == 0) {
+				scan.close();
+				break;
+			}
+			
+		}
 		
-}
+	}
 	
-
+}
