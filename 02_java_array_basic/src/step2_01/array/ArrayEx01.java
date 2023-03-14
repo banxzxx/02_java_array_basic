@@ -45,7 +45,7 @@ public class ArrayEx01 {
 		int[] arr = null; //주소변수의 초기값은 null로 초기화한다
 		arr = new int[5];
 		
-		System.out.println(arr); // 배열의 변수명은 주소 !
+		System.out.println(arr); // 배열의 변수명은 주소 ! (주소가 출력된다 )
 		
 		arr[0] = 10;
 		arr[1] = 20;
