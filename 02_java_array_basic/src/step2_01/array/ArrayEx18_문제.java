@@ -53,9 +53,8 @@ public class ArrayEx18_문제 {
 		
 		int r1 = 0 ;
 		int r2 = 0; 
-		int win = 0;	
 
-		while( win == 0 ) {
+		while( true ) {
 			System.out.println(Arrays.toString(game));
 			System.out.print(Arrays.toString(p1));
 			System.out.println(" " + r1 + "바퀴");
