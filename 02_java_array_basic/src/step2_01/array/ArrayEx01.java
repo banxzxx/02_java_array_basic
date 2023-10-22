@@ -1,5 +1,7 @@
 package step2_01.array;
 
+import java.util.Arrays;
+
 public class ArrayEx01 {
 	
 	/*
@@ -46,6 +48,8 @@ public class ArrayEx01 {
 		arr = new int[5];
 		
 		System.out.println(arr); // 배열의 변수명은 주소 ! (주소가 출력된다 )
+		
+		System.out.println(Arrays.toString(arr)); // 0으로 초깃값이 부여되어 있다
 		
 		arr[0] = 10;
 		arr[1] = 20;
